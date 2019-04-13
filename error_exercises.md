@@ -183,13 +183,20 @@ let result = getNine();
 ```
 error message:
 ```
+SyntaxError: Unexpected token {
 ```
 classification:
-* creation phase or execution phase ?
-* syntax or semanitc ?
+* creation phase
+* syntax
 
 the fix:
 ```js
+function getNine() {
+  let x = 6;
+  let y = 3;
+  return x + y;
+}
+let result = getNine();
 ```
 your notes:
 
@@ -203,13 +210,15 @@ let innerHtml = "<p>Click here to <a href="#Home">return home</a></p>";
 ```
 error message:
 ```
+SyntaxError: Unexpected token ILLEGAL
 ```
 classification:
-* creation phase or execution phase ?
-* syntax or semanitc ?
+* creation phase
+* syntax
 
 the fix:
 ```js
+"<p>Click here to <a href='#Home'>return home</a></p>"
 ```
 your notes:
 
@@ -223,13 +232,15 @@ let nested_messages = 'remind yourself ''i can do this!'' at least once a day';
 ```
 error message:
 ```
+SyntaxError: Unexpected string
 ```
 classification:
-* creation phase or execution phase ?
-* syntax or semanitc ?
+* creation phase
+* syntax
 
 the fix:
 ```js
+let nested_messages = 'remind yourself ' + 'i can do this!' + ' at least once a day';
 ```
 your notes:
 
@@ -244,13 +255,16 @@ a = 0;
 ```
 error message:
 ```
+TypeError: Assignment to constant variable.
 ```
 classification:
-* creation phase or execution phase ?
-* syntax or semanitc ?
+* execution phase ?
+* semanitc ?
 
 the fix:
 ```js
+let a = 9;
+a = 0;
 ```
 your notes:
 
@@ -265,13 +279,15 @@ a = 0;
 ```
 error message:
 ```
+SyntaxError: Missing initializer in const declaration
 ```
 classification:
-* creation phase or execution phase ?
-* syntax or semanitc ?
+* creation phase
+* syntax
 
 the fix:
 ```js
+const a = 0;
 ```
 your notes:
 
@@ -286,13 +302,16 @@ array.length()
 ```
 error message:
 ```
+TypeError: array.length is not a function
 ```
 classification:
-* creation phase or execution phase ?
-* syntax or semanitc ?
+* execution phase ?
+* syntax?
 
 the fix:
 ```js
+let array = [];
+array.length;
 ```
 your notes:
 
