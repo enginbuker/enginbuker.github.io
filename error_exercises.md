@@ -38,13 +38,15 @@ var = 5;
 ```
 error message:
 ```js
+Unexpected token
 ```
 classification:
-* creation phase or execution phase ?
-* syntax or semanitc ?
+* creation phase
+* syntax
 
 the fix:
 ```js
+var a = 5;
 ```
 your notes:
 
@@ -60,13 +62,16 @@ let b = a.b.3
 ```
 error message:
 ```
+Unexpected number
 ```
 classification:
-* creation phase or execution phase ?
-* syntax or semanitc ?
+* creation phase
+* semantic
 
 the fix:
 ```js
+let a = {b:3};
+let b = a.b;
 ```
 your notes:
 
@@ -81,13 +86,16 @@ let y = b.e;
 ```
 error message:
 ```
+ReferenceError: b is not defined
 ```
 classification:
-* creation phase or execution phase ?
-* syntax or semanitc ?
+* creation phase
+* semantic
 
 the fix:
 ```js
+let x = {b:'e'};
+let y = x.e;
 ```
 your notes:
 
@@ -102,13 +110,16 @@ two lines';
 ```
 error message:
 ```
+SyntaxError: Unexpected token ILLEGAL
 ```
 classification:
-* creation phase or execution phase ?
-* syntax or semanitc ?
+* creation phase
+* syntax
 
 the fix:
 ```js
+let a = `this is 
+two lines`;
 ```
 your notes:
 
@@ -122,13 +133,15 @@ let a = 1:
 ```
 error message:
 ```
+SyntaxError: Unexpected token :
 ```
 classification:
-* creation phase or execution phase ?
-* syntax or semanitc ?
+* creation phase
+* syntax
 
 the fix:
 ```js
+let a = 1;
 ```
 your notes:
 
@@ -142,13 +155,16 @@ let myArray = [1, 2, 3;
 ```
 error message:
 ```
+SyntaxError: Unexpected token ;
+
 ```
 classification:
-* creation phase or execution phase ?
-* syntax or semanitc ?
+* creation phase
+* syntax
 
 the fix:
 ```js
+let myArray = [1, 2, 3];
 ```
 your notes:
 
